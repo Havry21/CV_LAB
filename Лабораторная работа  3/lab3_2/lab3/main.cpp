@@ -12,18 +12,18 @@ Scalar color = Scalar(120, 120, 120);
 
 Mat secondExc = imread("C:/Users/dimag/Desktop/img_zadan/teplovizor/ntcs_quest_measurement.png"); 
 Mat out = secondExc.clone();
-Mat canny_output = secondExc.clone();
+Mat contour = secondExc.clone();
 
 int main(void) {
 
 	cvtColor(secondExc, secondExc, COLOR_BGR2HSV);
-	inRange(secondExc, Scalar(0, 0, 0), Scalar(25, 255, 255), canny_output);
+	inRange(secondExc, Scalar(0, 0, 0), Scalar(25, 255, 255), contour);
 
 	vector<vector<Point> > contours;
 	vector<Vec4i> hierarchy;
 	vector<double> arrOfContours;
 
-	findContours(canny_output, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
+	findContours(contour, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
 	for (unsigned int i = 0; i < contours.size(); i++){
 		arrOfContours.push_back(contourArea(contours[i]));
