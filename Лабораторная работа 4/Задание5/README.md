@@ -1,3 +1,3 @@
 Результаты работы кореляции представленны на картинке ниже
 
-![Screenshot] (/CVTest/result.png)
+![Screenshot] (/CVTest/result.jpg)
