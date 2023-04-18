@@ -1,3 +1,3 @@
 Результаты работы кореляции представленны на картинке ниже
 
-![Image alt] (./img/result.png)
+![Result] (/CVTest/result.png)
