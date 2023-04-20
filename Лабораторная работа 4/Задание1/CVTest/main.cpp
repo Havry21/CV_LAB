@@ -3,7 +3,7 @@
 #include <opencv2/highgui.hpp>
 
 #include<iostream>
-#include <cmath>    
+#include <cmath>
 #include<complex>
 #include<vector>
 
@@ -30,15 +30,15 @@ class myDiscrFurie {
             }
         }
 
-        for (int i = 0; i < _M; i++) {
-            for (int j = 0; j < _M; j++)
-            {
-                cout << W(i, j) << " ";
-            }
-            cout << endl;
-        }
-        cout << endl;
-        cout << endl;
+        // for (int i = 0; i < _M; i++) {
+        //     for (int j = 0; j < _M; j++)
+        //     {
+        //         cout << W(i, j) << " ";
+        //     }
+        //     cout << endl;
+        // }
+        // cout << endl;
+        // cout << endl;
     }
 public:
     cv::Mat_<complex<double>> F;
@@ -50,7 +50,7 @@ public:
         W = cv::Mat_<complex<double>>(_M, _M);
         F = cv::Mat_<complex<double>>(_M,  1);
         f = cv::Mat_<complex<double>>(_M,  1);
-        
+        cout << "Input Array" << endl;
         for (auto j = 0; j < _M; j++) {
             f(j,0) = complex<double>(_inputArray[j], 0);// делаем комлпексное число из обычного
             cout << f[j][0] << endl;
@@ -79,16 +79,31 @@ int main(void) {
 
     focuPocus.DTF();
 
-
+    cout << "my DTF" << endl;
     for (auto i = 0; i < 3; i++) { 
         cout << focuPocus.F[i][0] << endl;
     }
     cout << endl;
 
-    focuPocus.IDFT();
+    vector<double> openCvArray = {1, 2, 3 };
+    vector<complex<double>> outArray;
+    cv::dft(openCvArray, outArray, cv::DFT_COMPLEX_OUTPUT);
 
+    cout << "openCV DTF" << endl;
+    std::for_each(outArray.begin(), outArray.end(),
+            [](const complex<double>& n)
+            {
+                cout << n.real() << " " << n.imag() << endl;
+            }
+    );
+    cout << endl;
+
+
+
+    focuPocus.IDFT();
+    cout << "After IDTF, only real" << endl;
     for (auto i = 0; i < 3; i++) { // действительная часть сходится с изначально заданной, значит алгоритм работает 
-        cout << focuPocus.f[i][0] << endl;
+        cout << focuPocus.f[i][0].real() << endl;
     }
 
     return 0;
