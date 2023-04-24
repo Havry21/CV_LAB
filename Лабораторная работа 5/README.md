@@ -9,8 +9,7 @@
 
 Результат калибровки 
 
-![Результат работы](https://github.com/Havry21/CV_LAB/tree/master/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%204/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B56/img/result.png
-)
+![Результат работы](https://github.com/Havry21/CV_LAB/blob/master/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%205/img/calibrate.png)
 
 ### Задание 2
 
@@ -22,4 +21,4 @@
 
 drawCube как параметры принимает матрицы преобразования и параметры камеры. В самой функции мы получаем коориднаты точек проецируемые на картинку и рисуем по ним линии
 
-![Результат]() 
+![Результат](https://github.com/Havry21/CV_LAB/blob/master/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%205/img/result.avi) 
